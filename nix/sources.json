@@ -1,0 +1,32 @@
+{
+    "gitignore": {
+        "branch": "master",
+        "description": "Nix function for filtering local git sources",
+        "homepage": "",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "5b9e0ff9d3b551234b4f3eb3983744fa354b17f1",
+        "sha256": "01l4phiqgw9xgaxr6jr456qmww6kzghqrnbc7aiiww3h6db5vw53",
+        "type": "tarball",
+        "url": "https://github.com/hercules-ci/gitignore.nix/archive/5b9e0ff9d3b551234b4f3eb3983744fa354b17f1.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "nixpkgs-unstable",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47f45c8440e2ef1e967aa5aec3528dd976c4a488",
+        "sha256": "07q76bq14scwqr1s9yp4c89gfgxh2nva85lrhnahbwk69lzas11p",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/47f45c8440e2ef1e967aa5aec3528dd976c4a488.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "treefmt": {
+        "branch": "master",
+        "repo": "git@github.com:numtide/treefmt.git",
+        "rev": "874d65223cf99cea2ac916623c4fd080776aaac4",
+        "type": "git"
+    }
+}
