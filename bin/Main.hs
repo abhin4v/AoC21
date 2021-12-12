@@ -11,6 +11,7 @@ import qualified AoC.Day6 as Day6
 import qualified AoC.Day7 as Day7
 import qualified AoC.Day8 as Day8
 import qualified AoC.Day9 as Day9
+import qualified AoC.Day12 as Day12
 import System.Environment (getArgs)
 
 solutions :: [(Int, [String -> String])]
@@ -25,7 +26,8 @@ solutions =
     (8, [Day8.part1, Day8.part2]),
     (9, [Day9.part1, Day9.part2]),
     (10, [Day10.part1, Day10.part2]),
-    (11, [Day11.part1, Day11.part2])
+    (11, [Day11.part1, Day11.part2]),
+    (12, [Day12.part1, Day12.part2])
   ]
 
 main :: IO ()
