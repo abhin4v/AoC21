@@ -1,4 +1,4 @@
-module AoC.Day6 where
+module AoC.Day06 where
 
 import Control.Monad (forM_)
 import Control.Monad.ST (ST, runST)

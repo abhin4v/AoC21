@@ -1,4 +1,4 @@
-module AoC.Day8 where
+module AoC.Day08 where
 
 import AoC.Utils (intsToNumber, pairify)
 import Control.Monad ((>=>))

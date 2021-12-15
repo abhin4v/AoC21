@@ -1,4 +1,4 @@
-module AoC.Day4 where
+module AoC.Day04 where
 
 import Data.Bifunctor (Bifunctor (bimap))
 import Data.List (find, transpose, (\\))

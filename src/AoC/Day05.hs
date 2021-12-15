@@ -1,4 +1,4 @@
-module AoC.Day5 where
+module AoC.Day05 where
 
 import AoC.Utils
 import Data.List (sort)

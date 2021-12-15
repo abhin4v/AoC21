@@ -1,33 +1,33 @@
 module Main where
 
-import qualified AoC.Day1 as Day1
+import qualified AoC.Day01 as Day01
+import qualified AoC.Day02 as Day02
+import qualified AoC.Day03 as Day03
+import qualified AoC.Day04 as Day04
+import qualified AoC.Day05 as Day05
+import qualified AoC.Day06 as Day06
+import qualified AoC.Day07 as Day07
+import qualified AoC.Day08 as Day08
+import qualified AoC.Day09 as Day09
 import qualified AoC.Day10 as Day10
 import qualified AoC.Day11 as Day11
 import qualified AoC.Day12 as Day12
 import qualified AoC.Day13 as Day13
 import qualified AoC.Day14 as Day14
 import qualified AoC.Day15 as Day15
-import qualified AoC.Day2 as Day2
-import qualified AoC.Day3 as Day3
-import qualified AoC.Day4 as Day4
-import qualified AoC.Day5 as Day5
-import qualified AoC.Day6 as Day6
-import qualified AoC.Day7 as Day7
-import qualified AoC.Day8 as Day8
-import qualified AoC.Day9 as Day9
 import System.Environment (getArgs)
 
 solutions :: [(Int, [String -> String])]
 solutions =
-  [ (1, [Day1.part1, Day1.part2]),
-    (2, [Day2.part1, Day2.part2]),
-    (3, [Day3.part1, Day3.part2]),
-    (4, [Day4.part1, Day4.part2]),
-    (5, [Day5.part1, Day5.part2]),
-    (6, [Day6.part1, Day6.part2]),
-    (7, [Day7.part1, Day7.part2]),
-    (8, [Day8.part1, Day8.part2]),
-    (9, [Day9.part1, Day9.part2]),
+  [ (1, [Day01.part1, Day01.part2]),
+    (2, [Day02.part1, Day02.part2]),
+    (3, [Day03.part1, Day03.part2]),
+    (4, [Day04.part1, Day04.part2]),
+    (5, [Day05.part1, Day05.part2]),
+    (6, [Day06.part1, Day06.part2]),
+    (7, [Day07.part1, Day07.part2]),
+    (8, [Day08.part1, Day08.part2]),
+    (9, [Day09.part1, Day09.part2]),
     (10, [Day10.part1, Day10.part2]),
     (11, [Day11.part1, Day11.part2]),
     (12, [Day12.part1, Day12.part2]),

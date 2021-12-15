@@ -1,8 +1,8 @@
-module AoC.Day2 where
+module AoC.Day02 where
 
+import AoC.Utils (intP)
 import Control.Applicative ((<|>))
 import qualified Text.ParserCombinators.ReadP as P
-import AoC.Utils (intP)
 
 data Move = F Int | D Int | U Int deriving (Show)
 

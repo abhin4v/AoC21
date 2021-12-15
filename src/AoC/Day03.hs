@@ -1,8 +1,8 @@
-module AoC.Day3 where
+module AoC.Day03 where
 
+import AoC.Utils (binaryToDec)
 import Control.Arrow ((>>>))
 import Data.List (transpose)
-import AoC.Utils (binaryToDec)
 
 incCounts :: (Int, Int) -> Char -> (Int, Int)
 incCounts (z, o) = \case

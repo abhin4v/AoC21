@@ -1,4 +1,4 @@
-module AoC.Day9 where
+module AoC.Day09 where
 
 import Data.List (sortOn)
 import qualified Data.Set as Set

@@ -1,4 +1,4 @@
-module AoC.Day1 where
+module AoC.Day01 where
 
 import AoC.Utils (sliding)
 

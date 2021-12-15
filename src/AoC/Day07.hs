@@ -1,4 +1,4 @@
-module AoC.Day7 where
+module AoC.Day07 where
 
 import Data.List (minimumBy)
 import Data.List.Split (splitOn)
@@ -8,7 +8,7 @@ readInput :: String -> [Int]
 readInput = map read . splitOn ","
 
 solve :: ([Int] -> Int -> Int) -> String -> String
-solve f input = 
+solve f input =
   show $ f input' $ minimumBy (comparing (f input')) [minimum input' .. maximum input']
   where
     input' = readInput input

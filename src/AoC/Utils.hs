@@ -22,4 +22,3 @@ intsToNumber = foldl (\n d -> n * 10 + d) 0
 
 intP :: P.ReadP Int
 intP = read <$> P.many1 (P.satisfy isDigit)
-
