@@ -5,6 +5,7 @@ import qualified AoC.Day10 as Day10
 import qualified AoC.Day11 as Day11
 import qualified AoC.Day12 as Day12
 import qualified AoC.Day13 as Day13
+import qualified AoC.Day14 as Day14
 import qualified AoC.Day2 as Day2
 import qualified AoC.Day3 as Day3
 import qualified AoC.Day4 as Day4
@@ -29,7 +30,8 @@ solutions =
     (10, [Day10.part1, Day10.part2]),
     (11, [Day11.part1, Day11.part2]),
     (12, [Day12.part1, Day12.part2]),
-    (13, [Day13.part1, Day13.part2])
+    (13, [Day13.part1, Day13.part2]),
+    (14, [Day14.part1, Day14.part2])
   ]
 
 main :: IO ()
