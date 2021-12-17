@@ -2,7 +2,7 @@ module AoC.Day04 where
 
 import Data.Bifunctor (Bifunctor (bimap))
 import Data.List (find, transpose, (\\))
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 
 data Cell = Marked Int | Unmarked Int deriving (Show, Eq)
 

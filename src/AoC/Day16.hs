@@ -2,6 +2,7 @@ module AoC.Day16 where
 
 import AoC.Utils (binaryToDec)
 import Control.Applicative ((<|>))
+import Data.List.Extra (trimEnd)
 import qualified Text.ParserCombinators.ReadP as P
 
 hexToBin :: String -> String
@@ -93,7 +94,7 @@ interpret = \case
   Operator {} -> error "invalid operator"
 
 readInput :: String -> String
-readInput = head . lines
+readInput = trimEnd
 
 part1 :: String -> String
 part1 = show . addVersions . parse . readInput

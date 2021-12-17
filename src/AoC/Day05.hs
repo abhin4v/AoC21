@@ -2,7 +2,7 @@ module AoC.Day05 where
 
 import AoC.Utils
 import Data.List (sort)
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import Data.Ratio (numerator, (%))
 
 type Point = (Int, Int)

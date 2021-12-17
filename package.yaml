@@ -7,7 +7,6 @@ dependencies:
   - containers
   - mtl
   - vector
-  - split
   - grid
   - MemoTrie
   - graph-wrapper

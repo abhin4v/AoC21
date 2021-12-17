@@ -3,11 +3,11 @@ module AoC.Day12 where
 import AoC.Utils (pairify)
 import Data.Char (isAsciiUpper)
 import qualified Data.Graph.Wrapper as G
-import Data.List (nub)
-import Data.List.Split (splitOn)
+import Data.List.Extra (nubOrd, splitOn)
 import Data.Maybe (isNothing, mapMaybe)
 import qualified Data.Set as Set
 import Data.Tuple (swap)
+import Data.Tuple.Extra (dupe)
 
 type Cave = String
 
@@ -16,8 +16,8 @@ type CaveMap = G.Graph Cave Cave
 readInput :: String -> CaveMap
 readInput input =
   let edges = map (pairify . splitOn "-") . lines $ input
-      vertices = nub $ map fst edges <> map snd edges
-   in G.fromVerticesEdges (map (\x -> (x, x)) vertices) $ edges <> map swap edges
+      vertices = nubOrd $ map fst edges <> map snd edges
+   in G.fromVerticesEdges (map dupe vertices) $ edges <> map swap edges
 
 calcPathCount :: CaveMap -> (seen -> Cave -> Maybe seen) -> seen -> Int
 calcPathCount graph modifySeen = go "start"

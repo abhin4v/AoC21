@@ -2,8 +2,9 @@ module AoC.Day13 where
 
 import AoC.Utils (pairify)
 import Data.Bifunctor (Bifunctor (bimap, first, second))
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import qualified Data.Set as Set
+import Data.Tuple.Extra (both)
 
 type Points = Set.Set (Int, Int)
 
@@ -14,7 +15,7 @@ type Fold = (Axis, Int)
 readInput :: String -> (Points, [Fold])
 readInput =
   bimap
-    (Set.fromList . map (bimap read read . pairify . splitOn ",") . lines)
+    (Set.fromList . map (both read . pairify . splitOn ",") . lines)
     (map (bimap toAxis read . pairify . splitOn "=" . drop 11) . lines)
     . pairify
     . splitOn "\n\n"

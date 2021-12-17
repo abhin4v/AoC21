@@ -1,9 +1,9 @@
 module AoC.Day06 where
 
+import AoC.Utils (freq)
 import Control.Monad (forM_)
 import Control.Monad.ST (ST, runST)
-import Data.List (group, sort)
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import qualified Data.Vector.Unboxed as V
 import qualified Data.Vector.Unboxed.Mutable as MV
 
@@ -17,7 +17,7 @@ solve :: Int -> String -> String
 solve days input = runST $ do
   let input' = map read . splitOn "," $ input
   counts <- MV.replicate (days + 9) 0
-  forM_ (group $ sort input') $ \l -> MV.unsafeWrite counts (head l) $ length l
+  forM_ (freq input') $ uncurry (MV.unsafeWrite counts)
   forM_ [0 .. days - 1] $ step counts
   finalCounts <- V.freeze $ MV.unsafeSlice days 9 counts
   return $ show $ sum $ V.toList finalCounts

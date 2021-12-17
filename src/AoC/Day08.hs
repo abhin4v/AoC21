@@ -4,11 +4,12 @@ import AoC.Utils (intsToNumber, pairify)
 import Control.Monad ((>=>))
 import Data.Bifunctor (bimap)
 import Data.List (find, intersect, permutations, sort, sortOn, (\\))
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import qualified Data.Map.Strict as Map
 import Data.Maybe (fromJust, isJust)
 import Data.Traversable (for)
 import Data.Tuple (swap)
+import Data.Tuple.Extra (both)
 
 digitToSegments :: Map.Map Int String
 digitToSegments =
@@ -26,7 +27,7 @@ digitToSegments =
     ]
 
 readInput :: String -> [([String], [String])]
-readInput = map (bimap words words . pairify . splitOn " | ") . lines
+readInput = map (both words . pairify . splitOn " | ") . lines
 
 part1 :: String -> String
 part1 input =
@@ -63,7 +64,7 @@ solve patterns = intsToNumber . map ((segmentsToDigit Map.!) . sort . map (final
 
     eliminatePossibilities mapping =
       (mapping <>)
-        . map (bimap head head)
+        . map (both head)
         . filter (\(from, _) -> length from == 1)
         . map (`pairDiff` unzip mapping)
 

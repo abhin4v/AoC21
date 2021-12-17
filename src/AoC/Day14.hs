@@ -7,7 +7,7 @@ import AoC.Utils (freq, pairify, sliding)
 import Data.Bifunctor (second)
 import Data.Foldable (Foldable (toList))
 import Data.List (sortOn)
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import qualified Data.Map.Strict as Map
 
 type Template = String

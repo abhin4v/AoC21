@@ -1,7 +1,7 @@
 module AoC.Day17 where
 
 import AoC.Utils (pairify)
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import Data.Maybe (mapMaybe)
 import Data.Tuple.Extra (both, snd3)
 

@@ -1,7 +1,7 @@
 module AoC.Day07 where
 
 import Data.List (minimumBy)
-import Data.List.Split (splitOn)
+import Data.List.Extra (splitOn)
 import Data.Ord (comparing)
 
 readInput :: String -> [Int]
