@@ -12,6 +12,7 @@ dependencies:
   - MemoTrie
   - graph-wrapper
   - psqueues
+  - extra
 
 library:
   source-dirs: src
