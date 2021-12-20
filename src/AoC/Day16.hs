@@ -1,6 +1,6 @@
 module AoC.Day16 where
 
-import AoC.Utils (binaryToDec)
+import AoC.Utils (binaryToNumber)
 import Control.Applicative ((<|>))
 import Data.List.Extra (trimEnd)
 import qualified Text.ParserCombinators.ReadP as P
@@ -36,7 +36,7 @@ bits :: Int -> P.ReadP String
 bits n = P.count n bit
 
 num :: Int -> P.ReadP Int
-num n = binaryToDec <$> P.count n bit
+num n = binaryToNumber <$> P.count n bit
 
 literal :: Int -> P.ReadP Packet
 literal version = Literal version <$> go []
@@ -44,7 +44,7 @@ literal version = Literal version <$> go []
     go acc =
       bit >>= \case
         '1' -> bits 4 >>= go . (: acc)
-        '0' -> binaryToDec . concat . reverse . (: acc) <$> bits 4
+        '0' -> binaryToNumber . concat . reverse . (: acc) <$> bits 4
         _ -> error "invalid literal"
 
 operator :: Int -> Int -> P.ReadP Packet
@@ -72,7 +72,7 @@ packet = do
 parse :: String -> Packet
 parse s =
   let [(pkt, rest)] = P.readP_to_S packet $ hexToBin s
-   in if binaryToDec rest == 0
+   in if binaryToNumber rest == 0
         then pkt
         else error "invalid packet"
 

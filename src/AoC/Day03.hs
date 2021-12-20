@@ -1,6 +1,6 @@
 module AoC.Day03 where
 
-import AoC.Utils (binaryToDec)
+import AoC.Utils (binaryToNumber)
 import Control.Arrow ((>>>))
 import Data.List (transpose)
 
@@ -14,7 +14,7 @@ counts1 :: [String] -> [(Int, Int)]
 counts1 = map (foldl incCounts (0, 0)) . transpose
 
 part1 :: String -> String
-part1 input = show $ binaryToDec gamma * binaryToDec epsilon
+part1 input = show $ binaryToNumber gamma * binaryToNumber epsilon
   where
     input' = lines input
     gamma = map (\(z, o) -> if z > o then '0' else '1') $ counts1 input'
@@ -33,7 +33,7 @@ rating f =
     >>> head
 
 part2 :: String -> String
-part2 input = show $ binaryToDec oxygenRating * binaryToDec co2Rating
+part2 input = show $ binaryToNumber oxygenRating * binaryToNumber co2Rating
   where
     input' = lines input
     oxygenRating = flip rating input' $ \(z, o) -> if z > o then '0' else '1'

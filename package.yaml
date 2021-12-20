@@ -12,6 +12,7 @@ dependencies:
   - graph-wrapper
   - psqueues
   - extra
+  - bitwise
 
 library:
   source-dirs: src
