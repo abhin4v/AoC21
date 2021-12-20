@@ -19,6 +19,9 @@ import qualified AoC.Day16 as Day16
 import qualified AoC.Day17 as Day17
 import qualified AoC.Day18 as Day18
 import qualified AoC.Day20 as Day20
+import Control.Monad (forM_)
+import Data.Fixed (showFixed)
+import Data.Time (diffUTCTime, getCurrentTime, nominalDiffTimeToSeconds)
 import System.Environment (getArgs)
 
 solutions :: [(Int, [String -> String])]
@@ -57,4 +60,13 @@ main = do
           let partSolution = sols !! (part' - 1)
           putStrLn $ partSolution input
         _ -> putStrLn "No solution for that part"
-    _ -> putStrLn "Usage: aoc21 <day> <part> <input_file>"
+    [dir] -> forM_ solutions $ \(day, sols) -> do
+      input <- readFile $ dir <> "/" <> show day
+      forM_ (zip [1 ..] sols) $ \(part, solution) -> do
+        putStrLn $ "Day " <> show day <> " part " <> show part
+        start <- getCurrentTime
+        putStrLn $ solution input
+        elapsed <- (* 1000) . nominalDiffTimeToSeconds . (`diffUTCTime` start) <$> getCurrentTime
+        putStrLn $ "Elapsed: " <> showFixed True elapsed <> "ms"
+      putStrLn ""
+    _ -> putStrLn "Usage: aoc21 <day> <part> <input_file> or aoc21 <dir_with_inputs> to run all"

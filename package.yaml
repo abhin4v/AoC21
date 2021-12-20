@@ -24,6 +24,7 @@ executables:
     ghc-options: -O2
     dependencies:
       - aoc21
+      - time
 
 default-extensions:
   - BangPatterns
