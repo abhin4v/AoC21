@@ -10,7 +10,7 @@ dependencies:
   - grid
   - MemoTrie
   - graph-wrapper
-  - psqueues
+  - pqueue
   - extra
   - bitwise
 
